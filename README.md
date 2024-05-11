@@ -70,9 +70,16 @@
       image = docker_image.nginx.image_id
    
       name  = "example_${random_password.random_string.result}"
-   
 
 ![alt text](https://github.com/artmur1/17-01-hw/blob/main/17-1-1-3.png)
+
+![alt text](https://github.com/artmur1/17-01-hw/blob/main/17-1-1-4.png)
+
+6. Команда terraform apply -auto-approve делает пропуск интерактивного утверждения плана перед подачей заявки.
+
+![alt text](https://github.com/artmur1/17-01-hw/blob/main/17-1-1-5.png)
+
+
 
 
 
