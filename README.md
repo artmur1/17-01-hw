@@ -58,13 +58,19 @@
 5. Исправленный фрагмент кода
 
     resource "docker_image" "nginx" {
+   
       name         = "nginx:latest"
+   
       keep_locally = true
+   
     }
     
     resource "docker_container" "nginx" {
+   
       image = docker_image.nginx.image_id
+   
       name  = "example_${random_password.random_string.result}"
+   
 
 ![alt text](https://github.com/artmur1/17-01-hw/blob/main/17-1-1-3.png)
 
