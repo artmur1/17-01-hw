@@ -14,6 +14,12 @@
 3. Убедитесь, что в вашей ОС установлен docker.
 4. Зарегистрируйте аккаунт на сайте https://hub.docker.com/, выполните команду docker login и введите логин, пароль.
 
+### Решение "Чек-лист готовности к домашнему заданию"
+
+Скриншот вывода команды ```terraform --version```.
+
+![alt text](https://github.com/artmur1/17-01-hw/blob/main/17-1-0-1.png)
+
 ------
 
 ### Инструменты и дополнительные материалы, которые пригодятся для выполнения задания
@@ -38,6 +44,30 @@
 9. Объясните, почему при этом не был удалён docker-образ **nginx:latest**. Ответ **ОБЯЗАТЕЛЬНО НАЙДИТЕ В ПРЕДОСТАВЛЕННОМ КОДЕ**, а затем **ОБЯЗАТЕЛЬНО ПОДКРЕПИТЕ** строчкой из документации [**terraform провайдера docker**](https://docs.comcloud.xyz/providers/kreuzwerker/docker/latest/docs).  (ищите в классификаторе resource docker_image )
 
 ### Решение 1
+
+2. Согласно .gitignore, допустимо сохранить личную, секретную информацию в файле personal.auto.tfvars.
+
+3. Ключ: "type": "random_password",. Значение U0SehisFioO3LTvM.
+
+4. У ресурса на 24 линии docker_image должно быть 2 метки (тип, имя), а описан только тип. В строке 29 main.tf в ресурсе «docker_container» «1nginx»: - имя начинается с цифры. А должно начинаться с буквы или подчеркивания и может содержать только буквы, цифры, подчеркивания и тире. А также неправильно прописано имя переменной name.
+
+![alt text](https://github.com/artmur1/17-01-hw/blob/main/17-1-1-1.png)
+
+![alt text](https://github.com/artmur1/17-01-hw/blob/main/17-1-1-2.png)
+
+5. Исправленный фрагмент кода
+
+    resource "docker_image" "nginx" {
+      name         = "nginx:latest"
+      keep_locally = true
+    }
+   
+   resource "docker_container" "nginx" {
+      image = docker_image.nginx.image_id
+      name  = "example_${random_password.random_string.result}"
+  
+![alt text](https://github.com/artmur1/17-01-hw/blob/main/17-1-1-3.png)
+
 
 
 
