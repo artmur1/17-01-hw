@@ -82,14 +82,23 @@
 7. Cодержимое файла **terraform.tfstate**
 
     {
+   
       "version": 4,
+   
       "terraform_version": "1.5.7",
+   
       "serial": 11,
+   
       "lineage": "5ee5e1e9-b6a7-f7ec-3ddb-0c70c944315f",
+   
       "outputs": {},
+   
       "resources": [],
+   
       "check_results": null
+   
     }
+   
 
 
 
