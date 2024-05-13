@@ -103,7 +103,7 @@
 
 ## Доработка
 
-Не был удалён docker-образ **nginx:latest**, потому что при создании ресурса "docker_image" с именем "nginx" указан параметр keep_locally со значением true.
+8. Не был удалён docker-образ **nginx:latest**, потому что при создании ресурса "docker_image" с именем "nginx" указан параметр keep_locally со значением true.
 
 ![alt text](https://github.com/artmur1/17-01-hw/blob/main/17-1-1-8.png)
 
